@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+    <channel>
+        <title><![CDATA[LottoPools]]></title>
+        <description><![CDATA[LottoPools]]></description>
+        <link>http://github.com/dylang/node-rss</link>
+        <generator>The Grid</generator>
+        <lastBuildDate>Thu, 07 Jan 2016 22:26:45 GMT</lastBuildDate>
+        <atom:link href="undefinedrss.xml" rel="self" type="application/rss+xml"/>
+        <item>
+            <title><![CDATA[$700M Powerball Jackpot]]></title>
+            <description><![CDATA[<article><h1>$700M Powerball Jackpot</h1><p>Now that's some serious walking around money! A fun way to play the lottery is with friends and family in a lotto pool. In the scheme of things, it won't increase your odds all that much, but you will have more entries in the drawing and have some fun with your fellow pool members talking about what you would do if you won. </p><img src="https://s3-us-west-2.amazonaws.com/the-grid-img/p/bfd64abc66f65ccb56e97118344aed352a4b1012.jpg"></article>]]></description>
+            <link>undefineddollar700m-powerball-jackpot/index.html</link>
+            <guid isPermaLink="false">e484eb04-9220-4e4f-aae3-a6d411350335</guid>
+            <pubDate>Thu, 07 Jan 2016 22:26:37 GMT</pubDate>
+        </item>
+    </channel>
+</rss>
