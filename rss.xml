@@ -2,14 +2,27 @@
     <channel>
         <title><![CDATA[LottoPools]]></title>
         <description><![CDATA[LottoPools]]></description>
-        <link>http://github.com/dylang/node-rss</link>
+        <link>https://thegrid.ai/lottopools/</link>
         <generator>The Grid</generator>
-        <lastBuildDate>Thu, 07 Jan 2016 22:26:45 GMT</lastBuildDate>
-        <atom:link href="undefinedrss.xml" rel="self" type="application/rss+xml"/>
+        <lastBuildDate>Thu, 07 Jan 2016 22:30:29 GMT</lastBuildDate>
+        <atom:link href="https://thegrid.ai/lottopools/rss.xml" rel="self" type="application/rss+xml"/>
+        <item>
+            <title><![CDATA[Largest Jackpot in U.S. History]]></title>
+            <description><![CDATA[<article><h1>Largest Jackpot in U.S. History</h1><p>The largest jackpot in U.S. history -- now an estimated $700 million - will be up for grabs in Saturday night's drawing after no one produced the magic combination of 47, 2, 63, 62, 11 and the Powerball of 17 to win Wednesday night's $524 million jackpot.
+
+The prize had surged from $450 million.
+
+The payout would have had an estimated cash value of about $428.4 million, before taxes, according to the Powerball website. The final take-home amount depends on an individual's tax rate and the state and local taxes in their state of residence, Tracey Cohen, the interim executive director of the D.C. Lottery, told ABC News.
+
+The largest lottery jackpot to date was won in three states in March 2012, when the Mega Millions drawing reached a whopping $656 million.</p><img src="https://s3-us-west-2.amazonaws.com/the-grid-img/p/bd2f45c337ca52ad7bd328b01585b4d5c68353dd.jpg"></article>]]></description>
+            <link>https://thegrid.ai/lottopools/largest-jackpot-in-us-history/index.html</link>
+            <guid isPermaLink="false">5313e003-bbe5-4a2b-a843-1ab455aa90af</guid>
+            <pubDate>Thu, 07 Jan 2016 22:30:17 GMT</pubDate>
+        </item>
         <item>
             <title><![CDATA[$700M Powerball Jackpot]]></title>
             <description><![CDATA[<article><h1>$700M Powerball Jackpot</h1><p>Now that's some serious walking around money! A fun way to play the lottery is with friends and family in a lotto pool. In the scheme of things, it won't increase your odds all that much, but you will have more entries in the drawing and have some fun with your fellow pool members talking about what you would do if you won. </p><img src="https://s3-us-west-2.amazonaws.com/the-grid-img/p/bfd64abc66f65ccb56e97118344aed352a4b1012.jpg"></article>]]></description>
-            <link>undefineddollar700m-powerball-jackpot/index.html</link>
+            <link>https://thegrid.ai/lottopools/dollar700m-powerball-jackpot/index.html</link>
             <guid isPermaLink="false">e484eb04-9220-4e4f-aae3-a6d411350335</guid>
             <pubDate>Thu, 07 Jan 2016 22:26:37 GMT</pubDate>
         </item>
