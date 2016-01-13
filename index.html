@@ -1,4 +1,4 @@
-<!DOCTYPE HTML><html class="exporting wf-loading"><head><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"/><title>LottoPools</title><link href="rss.xml" title="LottoPools feed" rel="alternate" type="application/rss+xml"/><meta name="generator" content="The Grid taylor/0.16.25"><meta name="the-grid-solution" content="8db467f0-0fbc-4d8a-93fe-4febf2207b1b"><style href="./css/scale/mini.css" media="(max-width: 19.9376em)" rel="stylesheet">@media (max-width: 15.625em){html{font-size:3.09375em !important}}
+<!DOCTYPE HTML><html class="exporting wf-loading"><head><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"/><title>LottoPools</title><link href="rss.xml" title="LottoPools feed" rel="alternate" type="application/rss+xml"/><meta name="generator" content="The Grid taylor/0.17.3"><meta name="the-grid-solution" content="a4ca5cc4-61a6-423a-9ca7-5edfdae28c6b"><style href="./css/scale/mini.css" media="(max-width: 19.9376em)" rel="stylesheet">@media (max-width: 15.625em){html{font-size:3.09375em !important}}
 @media (min-width: 15.6875em)and (max-width: 15.75em){	html{font-size:3.28125em !important}}
 @media (min-width: 15.8125em)and (max-width: 16.25em){	html{font-size:3.375em !important}}
 @media (min-width: 16.3125em)and (max-width: 16.6875em){html{font-size:3.46875em !important}}
@@ -202,6 +202,14 @@ body {
 }
 .stack {
   z-index: 1;
+  transition: transform 0.3s ease-out;
+  -webkit-transition: -webkit-transform 0.3s ease-out;
+}
+.group,
+.aside,
+.decoration {
+  transition: transform 0.3s ease-out;
+  -webkit-transition: -webkit-transform 0.3s ease-out;
 }
 picture {
   display: inline-block;
@@ -250,6 +258,9 @@ a:active {
   transition: color 0.1s ease-in, background-color 0.1s ease-out;
   -webkit-transition: color 0.1s ease-in, background-color 0.1s ease-out;
 }
+a.aside {
+  display: inline-block;
+}
 html.exporting a {
   transition: none;
 }
@@ -259,11 +270,21 @@ html.exporting a {
 .media > a {
   display: inline-block;
 }
+.media iframe {
+  transition: 0.3s opacity ease-in;
+  -webkit-transition: 0.3s opacity ease-in;
+}
 h1 a,
 h2 a,
 h3 a {
   font-weight: inherit;
   letter-spacing: inherit;
+}
+a {
+  -webkit-box-decoration-break: clone;
+  -ms-box-decoration-break: clone;
+  -moz-box-decoration-break: clone;
+  box-decoration-break: clone;
 }
 .text-decoration {
   -webkit-box-decoration-break: clone;
@@ -277,36 +298,50 @@ h3 a {
   margin-left: 1.5em;
 }
 .decoration {
-  position: relative;
   pointer-events: none;
+}
+.svg {
+  position: relative;
   background-color: currentColor;
 }
-.decoration > svg {
+.svg > svg {
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
 }
-.decoration.connector > svg {
+.svg.connector > svg {
   width: 109%;
   height: 109%;
   margin-left: -2%;
 }
-.decoration path,
-.decoration ellipse,
-.decoration rect,
-.decoration polygon,
-.decoration circle {
+.svg path,
+.svg ellipse,
+.svg rect,
+.svg polygon,
+.svg circle {
   fill: currentColor;
 }
-.decoration mpath,
-.decoration line,
-.decoration polyline {
+.svg mpath,
+.svg line,
+.svg polyline {
   stroke: currentColor;
 }
-.svg.decoration {
+.svg {
   background-color: transparent;
+}
+.revealed .play.svg:after {
+  display: block;
+  width: 40px;
+  height: 40px;
+  top: 50%;
+  left: 50%;
+  position: absolute;
+  margin-top: -20px;
+  margin-left: -20px;
+  background-color: currentColor;
+  content: "";
 }
 .colors-style-aside-border .publisher,
 .colors-style-aside-border .author {
@@ -443,7 +478,7 @@ ul {
 #u-5313e003-bbe5-4a2b-a843-1ab455aa90af#u-5313e003-bbe5-4a2b-a843-1ab455aa90af .group.textual > .text.paragraph a { color: rgb(168, 169, 172); text-shadow: rgb(242, 154, 28) 0px 1px 0px; }
 #u-5313e003-bbe5-4a2b-a843-1ab455aa90af#u-5313e003-bbe5-4a2b-a843-1ab455aa90af .group.textual > .text.paragraph a:hover { color: rgb(143, 144, 148); }
 #u-5313e003-bbe5-4a2b-a843-1ab455aa90af#u-5313e003-bbe5-4a2b-a843-1ab455aa90af .group.textual .text-decoration { background-color: rgba(240, 242, 245, 0.701961); }
-#u-5313e003-bbe5-4a2b-a843-1ab455aa90af#u-5313e003-bbe5-4a2b-a843-1ab455aa90af .media.cover { background-image: linear-gradient(rgb(248, 249, 250), rgb(242, 154, 28)); }
+#u-5313e003-bbe5-4a2b-a843-1ab455aa90af#u-5313e003-bbe5-4a2b-a843-1ab455aa90af .media.cover { background-image: linear-gradient(rgb(0, 39, 102), rgb(242, 154, 28)); }
 #u-5313e003-bbe5-4a2b-a843-1ab455aa90af#u-5313e003-bbe5-4a2b-a843-1ab455aa90af a { color: rgb(0, 50, 128); }
 #u-5313e003-bbe5-4a2b-a843-1ab455aa90af#u-5313e003-bbe5-4a2b-a843-1ab455aa90af a:hover { color: rgb(0, 0, 0); }
 #u-5313e003-bbe5-4a2b-a843-1ab455aa90af#u-5313e003-bbe5-4a2b-a843-1ab455aa90af a:active { color: rgb(0, 0, 0); }
@@ -461,7 +496,7 @@ ul {
 #u-e484eb04-9220-4e4f-aae3-a6d411350335#u-e484eb04-9220-4e4f-aae3-a6d411350335 .group.heading > .title.headline { color: rgb(54, 47, 55); }
 #u-e484eb04-9220-4e4f-aae3-a6d411350335#u-e484eb04-9220-4e4f-aae3-a6d411350335 .group.heading > .title.headline a:hover { color: rgb(66, 68, 41); }
 #u-e484eb04-9220-4e4f-aae3-a6d411350335#u-e484eb04-9220-4e4f-aae3-a6d411350335 .group.heading .text-decoration { background-color: rgba(235, 233, 194, 0.74902); }
-#u-e484eb04-9220-4e4f-aae3-a6d411350335#u-e484eb04-9220-4e4f-aae3-a6d411350335 .media.cover { background-image: linear-gradient(rgb(220, 218, 150), rgb(105, 122, 33)); }
+#u-e484eb04-9220-4e4f-aae3-a6d411350335#u-e484eb04-9220-4e4f-aae3-a6d411350335 .media.cover { background-image: linear-gradient(rgb(54, 47, 55), rgb(247, 247, 237)); }
 #u-e484eb04-9220-4e4f-aae3-a6d411350335#u-e484eb04-9220-4e4f-aae3-a6d411350335 a { color: rgb(188, 54, 49); }
 #u-e484eb04-9220-4e4f-aae3-a6d411350335#u-e484eb04-9220-4e4f-aae3-a6d411350335 a:hover { color: rgb(204, 204, 204); }
 #u-e484eb04-9220-4e4f-aae3-a6d411350335#u-e484eb04-9220-4e4f-aae3-a6d411350335 a:active { color: rgb(255, 255, 255); }
@@ -526,7 +561,7 @@ display: none;
 #u-5313e003-bbe5-4a2b-a843-1ab455aa90af#u-5313e003-bbe5-4a2b-a843-1ab455aa90af .group.textual > .text.paragraph a { color: rgb(168, 169, 172); text-shadow: rgb(242, 154, 28) 0px 1px 0px; }
 #u-5313e003-bbe5-4a2b-a843-1ab455aa90af#u-5313e003-bbe5-4a2b-a843-1ab455aa90af .group.textual > .text.paragraph a:hover { color: rgb(143, 144, 148); }
 #u-5313e003-bbe5-4a2b-a843-1ab455aa90af#u-5313e003-bbe5-4a2b-a843-1ab455aa90af .group.textual .text-decoration { background-color: rgba(240, 242, 245, 0.701961); }
-#u-5313e003-bbe5-4a2b-a843-1ab455aa90af#u-5313e003-bbe5-4a2b-a843-1ab455aa90af .media.cover { background-image: linear-gradient(rgb(248, 249, 250), rgb(242, 154, 28)); }
+#u-5313e003-bbe5-4a2b-a843-1ab455aa90af#u-5313e003-bbe5-4a2b-a843-1ab455aa90af .media.cover { background-image: linear-gradient(rgb(0, 39, 102), rgb(242, 154, 28)); }
 #u-5313e003-bbe5-4a2b-a843-1ab455aa90af#u-5313e003-bbe5-4a2b-a843-1ab455aa90af a { color: rgb(0, 50, 128); }
 #u-5313e003-bbe5-4a2b-a843-1ab455aa90af#u-5313e003-bbe5-4a2b-a843-1ab455aa90af a:hover { color: rgb(0, 0, 0); }
 #u-5313e003-bbe5-4a2b-a843-1ab455aa90af#u-5313e003-bbe5-4a2b-a843-1ab455aa90af a:active { color: rgb(0, 0, 0); }
@@ -544,7 +579,7 @@ display: none;
 #u-e484eb04-9220-4e4f-aae3-a6d411350335#u-e484eb04-9220-4e4f-aae3-a6d411350335 .group.heading > .title.headline { color: rgb(54, 47, 55); }
 #u-e484eb04-9220-4e4f-aae3-a6d411350335#u-e484eb04-9220-4e4f-aae3-a6d411350335 .group.heading > .title.headline a:hover { color: rgb(66, 68, 41); }
 #u-e484eb04-9220-4e4f-aae3-a6d411350335#u-e484eb04-9220-4e4f-aae3-a6d411350335 .group.heading .text-decoration { background-color: rgba(235, 233, 194, 0.74902); }
-#u-e484eb04-9220-4e4f-aae3-a6d411350335#u-e484eb04-9220-4e4f-aae3-a6d411350335 .media.cover { background-image: linear-gradient(rgb(220, 218, 150), rgb(105, 122, 33)); }
+#u-e484eb04-9220-4e4f-aae3-a6d411350335#u-e484eb04-9220-4e4f-aae3-a6d411350335 .media.cover { background-image: linear-gradient(rgb(54, 47, 55), rgb(247, 247, 237)); }
 #u-e484eb04-9220-4e4f-aae3-a6d411350335#u-e484eb04-9220-4e4f-aae3-a6d411350335 a { color: rgb(188, 54, 49); }
 #u-e484eb04-9220-4e4f-aae3-a6d411350335#u-e484eb04-9220-4e4f-aae3-a6d411350335 a:hover { color: rgb(204, 204, 204); }
 #u-e484eb04-9220-4e4f-aae3-a6d411350335#u-e484eb04-9220-4e4f-aae3-a6d411350335 a:active { color: rgb(255, 255, 255); }
@@ -609,7 +644,7 @@ display: none;
 #u-5313e003-bbe5-4a2b-a843-1ab455aa90af#u-5313e003-bbe5-4a2b-a843-1ab455aa90af .group.textual > .text.paragraph a { color: rgb(168, 169, 172); text-shadow: rgb(242, 154, 28) 0px 1px 0px; }
 #u-5313e003-bbe5-4a2b-a843-1ab455aa90af#u-5313e003-bbe5-4a2b-a843-1ab455aa90af .group.textual > .text.paragraph a:hover { color: rgb(143, 144, 148); }
 #u-5313e003-bbe5-4a2b-a843-1ab455aa90af#u-5313e003-bbe5-4a2b-a843-1ab455aa90af .group.textual .text-decoration { background-color: rgba(240, 242, 245, 0.701961); }
-#u-5313e003-bbe5-4a2b-a843-1ab455aa90af#u-5313e003-bbe5-4a2b-a843-1ab455aa90af .media.cover { background-image: linear-gradient(rgb(248, 249, 250), rgb(242, 154, 28)); }
+#u-5313e003-bbe5-4a2b-a843-1ab455aa90af#u-5313e003-bbe5-4a2b-a843-1ab455aa90af .media.cover { background-image: linear-gradient(rgb(0, 39, 102), rgb(242, 154, 28)); }
 #u-5313e003-bbe5-4a2b-a843-1ab455aa90af#u-5313e003-bbe5-4a2b-a843-1ab455aa90af a { color: rgb(0, 50, 128); }
 #u-5313e003-bbe5-4a2b-a843-1ab455aa90af#u-5313e003-bbe5-4a2b-a843-1ab455aa90af a:hover { color: rgb(0, 0, 0); }
 #u-5313e003-bbe5-4a2b-a843-1ab455aa90af#u-5313e003-bbe5-4a2b-a843-1ab455aa90af a:active { color: rgb(0, 0, 0); }
@@ -627,7 +662,7 @@ display: none;
 #u-e484eb04-9220-4e4f-aae3-a6d411350335#u-e484eb04-9220-4e4f-aae3-a6d411350335 .group.heading > .title.headline { color: rgb(54, 47, 55); }
 #u-e484eb04-9220-4e4f-aae3-a6d411350335#u-e484eb04-9220-4e4f-aae3-a6d411350335 .group.heading > .title.headline a:hover { color: rgb(66, 68, 41); }
 #u-e484eb04-9220-4e4f-aae3-a6d411350335#u-e484eb04-9220-4e4f-aae3-a6d411350335 .group.heading .text-decoration { background-color: rgba(235, 233, 194, 0.74902); }
-#u-e484eb04-9220-4e4f-aae3-a6d411350335#u-e484eb04-9220-4e4f-aae3-a6d411350335 .media.cover { background-image: linear-gradient(rgb(220, 218, 150), rgb(105, 122, 33)); }
+#u-e484eb04-9220-4e4f-aae3-a6d411350335#u-e484eb04-9220-4e4f-aae3-a6d411350335 .media.cover { background-image: linear-gradient(rgb(54, 47, 55), rgb(247, 247, 237)); }
 #u-e484eb04-9220-4e4f-aae3-a6d411350335#u-e484eb04-9220-4e4f-aae3-a6d411350335 a { color: rgb(188, 54, 49); }
 #u-e484eb04-9220-4e4f-aae3-a6d411350335#u-e484eb04-9220-4e4f-aae3-a6d411350335 a:hover { color: rgb(204, 204, 204); }
 #u-e484eb04-9220-4e4f-aae3-a6d411350335#u-e484eb04-9220-4e4f-aae3-a6d411350335 a:active { color: rgb(255, 255, 255); }
@@ -692,7 +727,7 @@ display: none;
 #u-5313e003-bbe5-4a2b-a843-1ab455aa90af#u-5313e003-bbe5-4a2b-a843-1ab455aa90af .group.textual > .text.paragraph a { color: rgb(168, 169, 172); text-shadow: rgb(242, 154, 28) 0px 1px 0px; }
 #u-5313e003-bbe5-4a2b-a843-1ab455aa90af#u-5313e003-bbe5-4a2b-a843-1ab455aa90af .group.textual > .text.paragraph a:hover { color: rgb(143, 144, 148); }
 #u-5313e003-bbe5-4a2b-a843-1ab455aa90af#u-5313e003-bbe5-4a2b-a843-1ab455aa90af .group.textual .text-decoration { background-color: rgba(240, 242, 245, 0.701961); }
-#u-5313e003-bbe5-4a2b-a843-1ab455aa90af#u-5313e003-bbe5-4a2b-a843-1ab455aa90af .media.cover { background-image: linear-gradient(rgb(248, 249, 250), rgb(242, 154, 28)); }
+#u-5313e003-bbe5-4a2b-a843-1ab455aa90af#u-5313e003-bbe5-4a2b-a843-1ab455aa90af .media.cover { background-image: linear-gradient(rgb(0, 39, 102), rgb(242, 154, 28)); }
 #u-5313e003-bbe5-4a2b-a843-1ab455aa90af#u-5313e003-bbe5-4a2b-a843-1ab455aa90af a { color: rgb(0, 50, 128); }
 #u-5313e003-bbe5-4a2b-a843-1ab455aa90af#u-5313e003-bbe5-4a2b-a843-1ab455aa90af a:hover { color: rgb(0, 0, 0); }
 #u-5313e003-bbe5-4a2b-a843-1ab455aa90af#u-5313e003-bbe5-4a2b-a843-1ab455aa90af a:active { color: rgb(0, 0, 0); }
@@ -710,7 +745,7 @@ display: none;
 #u-e484eb04-9220-4e4f-aae3-a6d411350335#u-e484eb04-9220-4e4f-aae3-a6d411350335 .group.heading > .title.headline { color: rgb(54, 47, 55); }
 #u-e484eb04-9220-4e4f-aae3-a6d411350335#u-e484eb04-9220-4e4f-aae3-a6d411350335 .group.heading > .title.headline a:hover { color: rgb(66, 68, 41); }
 #u-e484eb04-9220-4e4f-aae3-a6d411350335#u-e484eb04-9220-4e4f-aae3-a6d411350335 .group.heading .text-decoration { background-color: rgba(235, 233, 194, 0.74902); }
-#u-e484eb04-9220-4e4f-aae3-a6d411350335#u-e484eb04-9220-4e4f-aae3-a6d411350335 .media.cover { background-image: linear-gradient(rgb(220, 218, 150), rgb(105, 122, 33)); }
+#u-e484eb04-9220-4e4f-aae3-a6d411350335#u-e484eb04-9220-4e4f-aae3-a6d411350335 .media.cover { background-image: linear-gradient(rgb(54, 47, 55), rgb(247, 247, 237)); }
 #u-e484eb04-9220-4e4f-aae3-a6d411350335#u-e484eb04-9220-4e4f-aae3-a6d411350335 a { color: rgb(188, 54, 49); }
 #u-e484eb04-9220-4e4f-aae3-a6d411350335#u-e484eb04-9220-4e4f-aae3-a6d411350335 a:hover { color: rgb(204, 204, 204); }
 #u-e484eb04-9220-4e4f-aae3-a6d411350335#u-e484eb04-9220-4e4f-aae3-a6d411350335 a:active { color: rgb(255, 255, 255); }
@@ -775,7 +810,7 @@ display: none;
 #u-5313e003-bbe5-4a2b-a843-1ab455aa90af#u-5313e003-bbe5-4a2b-a843-1ab455aa90af .group.textual > .text.paragraph a { color: rgb(168, 169, 172); text-shadow: rgb(242, 154, 28) 0px 1px 0px; }
 #u-5313e003-bbe5-4a2b-a843-1ab455aa90af#u-5313e003-bbe5-4a2b-a843-1ab455aa90af .group.textual > .text.paragraph a:hover { color: rgb(143, 144, 148); }
 #u-5313e003-bbe5-4a2b-a843-1ab455aa90af#u-5313e003-bbe5-4a2b-a843-1ab455aa90af .group.textual .text-decoration { background-color: rgba(240, 242, 245, 0.701961); }
-#u-5313e003-bbe5-4a2b-a843-1ab455aa90af#u-5313e003-bbe5-4a2b-a843-1ab455aa90af .media.cover { background-image: linear-gradient(rgb(248, 249, 250), rgb(242, 154, 28)); }
+#u-5313e003-bbe5-4a2b-a843-1ab455aa90af#u-5313e003-bbe5-4a2b-a843-1ab455aa90af .media.cover { background-image: linear-gradient(rgb(0, 39, 102), rgb(242, 154, 28)); }
 #u-5313e003-bbe5-4a2b-a843-1ab455aa90af#u-5313e003-bbe5-4a2b-a843-1ab455aa90af a { color: rgb(0, 50, 128); }
 #u-5313e003-bbe5-4a2b-a843-1ab455aa90af#u-5313e003-bbe5-4a2b-a843-1ab455aa90af a:hover { color: rgb(0, 0, 0); }
 #u-5313e003-bbe5-4a2b-a843-1ab455aa90af#u-5313e003-bbe5-4a2b-a843-1ab455aa90af a:active { color: rgb(0, 0, 0); }
@@ -793,7 +828,7 @@ display: none;
 #u-e484eb04-9220-4e4f-aae3-a6d411350335#u-e484eb04-9220-4e4f-aae3-a6d411350335 .group.heading > .title.headline { color: rgb(54, 47, 55); }
 #u-e484eb04-9220-4e4f-aae3-a6d411350335#u-e484eb04-9220-4e4f-aae3-a6d411350335 .group.heading > .title.headline a:hover { color: rgb(66, 68, 41); }
 #u-e484eb04-9220-4e4f-aae3-a6d411350335#u-e484eb04-9220-4e4f-aae3-a6d411350335 .group.heading .text-decoration { background-color: rgba(235, 233, 194, 0.74902); }
-#u-e484eb04-9220-4e4f-aae3-a6d411350335#u-e484eb04-9220-4e4f-aae3-a6d411350335 .media.cover { background-image: linear-gradient(rgb(220, 218, 150), rgb(105, 122, 33)); }
+#u-e484eb04-9220-4e4f-aae3-a6d411350335#u-e484eb04-9220-4e4f-aae3-a6d411350335 .media.cover { background-image: linear-gradient(rgb(54, 47, 55), rgb(247, 247, 237)); }
 #u-e484eb04-9220-4e4f-aae3-a6d411350335#u-e484eb04-9220-4e4f-aae3-a6d411350335 a { color: rgb(188, 54, 49); }
 #u-e484eb04-9220-4e4f-aae3-a6d411350335#u-e484eb04-9220-4e4f-aae3-a6d411350335 a:hover { color: rgb(204, 204, 204); }
 #u-e484eb04-9220-4e4f-aae3-a6d411350335#u-e484eb04-9220-4e4f-aae3-a6d411350335 a:active { color: rgb(255, 255, 255); }
@@ -858,7 +893,7 @@ display: none;
 #u-5313e003-bbe5-4a2b-a843-1ab455aa90af#u-5313e003-bbe5-4a2b-a843-1ab455aa90af .group.textual > .text.paragraph a { color: rgb(168, 169, 172); text-shadow: rgb(242, 154, 28) 0px 1px 0px; }
 #u-5313e003-bbe5-4a2b-a843-1ab455aa90af#u-5313e003-bbe5-4a2b-a843-1ab455aa90af .group.textual > .text.paragraph a:hover { color: rgb(143, 144, 148); }
 #u-5313e003-bbe5-4a2b-a843-1ab455aa90af#u-5313e003-bbe5-4a2b-a843-1ab455aa90af .group.textual .text-decoration { background-color: rgba(240, 242, 245, 0.701961); }
-#u-5313e003-bbe5-4a2b-a843-1ab455aa90af#u-5313e003-bbe5-4a2b-a843-1ab455aa90af .media.cover { background-image: linear-gradient(rgb(248, 249, 250), rgb(242, 154, 28)); }
+#u-5313e003-bbe5-4a2b-a843-1ab455aa90af#u-5313e003-bbe5-4a2b-a843-1ab455aa90af .media.cover { background-image: linear-gradient(rgb(0, 39, 102), rgb(242, 154, 28)); }
 #u-5313e003-bbe5-4a2b-a843-1ab455aa90af#u-5313e003-bbe5-4a2b-a843-1ab455aa90af a { color: rgb(0, 50, 128); }
 #u-5313e003-bbe5-4a2b-a843-1ab455aa90af#u-5313e003-bbe5-4a2b-a843-1ab455aa90af a:hover { color: rgb(0, 0, 0); }
 #u-5313e003-bbe5-4a2b-a843-1ab455aa90af#u-5313e003-bbe5-4a2b-a843-1ab455aa90af a:active { color: rgb(0, 0, 0); }
@@ -876,7 +911,7 @@ display: none;
 #u-e484eb04-9220-4e4f-aae3-a6d411350335#u-e484eb04-9220-4e4f-aae3-a6d411350335 .group.heading > .title.headline { color: rgb(54, 47, 55); }
 #u-e484eb04-9220-4e4f-aae3-a6d411350335#u-e484eb04-9220-4e4f-aae3-a6d411350335 .group.heading > .title.headline a:hover { color: rgb(66, 68, 41); }
 #u-e484eb04-9220-4e4f-aae3-a6d411350335#u-e484eb04-9220-4e4f-aae3-a6d411350335 .group.heading .text-decoration { background-color: rgba(235, 233, 194, 0.74902); }
-#u-e484eb04-9220-4e4f-aae3-a6d411350335#u-e484eb04-9220-4e4f-aae3-a6d411350335 .media.cover { background-image: linear-gradient(rgb(220, 218, 150), rgb(105, 122, 33)); }
+#u-e484eb04-9220-4e4f-aae3-a6d411350335#u-e484eb04-9220-4e4f-aae3-a6d411350335 .media.cover { background-image: linear-gradient(rgb(54, 47, 55), rgb(247, 247, 237)); }
 #u-e484eb04-9220-4e4f-aae3-a6d411350335#u-e484eb04-9220-4e4f-aae3-a6d411350335 a { color: rgb(188, 54, 49); }
 #u-e484eb04-9220-4e4f-aae3-a6d411350335#u-e484eb04-9220-4e4f-aae3-a6d411350335 a:hover { color: rgb(204, 204, 204); }
 #u-e484eb04-9220-4e4f-aae3-a6d411350335#u-e484eb04-9220-4e4f-aae3-a6d411350335 a:active { color: rgb(255, 255, 255); }
@@ -909,7 +944,7 @@ wbr.w1800{ display: block }
  #u-07e23e87-21c3-497a-ab00-514ed1a23279-desktop-l-one-4 {
 display: none;
 }
-}</style></head><body><div class="layout-system rust mobile" id="page-07e23e87-21c3-497a-ab00-514ed1a23279"><section kind="layout" style="position: relative" sequence="one" role="header" diff_index="0" index="one" class="layout one i first_layout w_headline w_title w_separator w_decoration w_leader w_trailer w_icon w_short_headline w_short_title layout one" id="u-07e23e87-21c3-497a-ab00-514ed1a23279-mobile-l-one"><div kind="layout" style="position: relative" sequence="one" diff_index="0" index="one" class="colors-use-local w_titles layout one i first_layout last_layout header layout one" id="u-07e23e87-21c3-497a-ab00-514ed1a23279-mobile-l-one-l-one"></div></section><section kind="layout" style="position: relative" sequence="one" role="opener" diff_index="0" index="one" class="layout one i w_paragraph w_text w_separator w_decoration w_leader w_long_paragraph w_long_text media_gte_narrow media_lt_half media_lt_wide media_lt_full media_landscape crop_true layout one" id="u-07e23e87-21c3-497a-ab00-514ed1a23279-mobile-l-one-2"><div kind="layout" style="position: relative" sequence="one" diff_index="0" index="one" class="colors-use-local w_medias w_texts layout one i first_layout last_layout opener layout one" id="u-07e23e87-21c3-497a-ab00-514ed1a23279-mobile-l-one-2-l-one"></div></section><section kind="layout" style="position: relative" sequence="one" role="feed" diff_index="0" index="one" class="layout one i w_headline w_title w_separator w_decoration w_leader w_trailer w_icon w_short_headline w_short_title media_gte_narrow media_lt_half media_lt_wide media_lt_full media_landscape crop_true layout one" id="u-07e23e87-21c3-497a-ab00-514ed1a23279-mobile-l-one-3"><div kind="layout" style="position: relative" sequence="one" diff_index="0" index="one" class="colors-use-local w_medias w_titles layout one i first_layout last_layout feed layout one" id="u-07e23e87-21c3-497a-ab00-514ed1a23279-mobile-l-one-3-l-one"></div></section><section kind="layout" style="position: relative" sequence="one" role="footer" diff_index="0" index="one" class="layout one i last_layout w_headline w_title w_separator w_decoration w_leader w_trailer w_icon w_short_headline w_short_title layout one" id="u-07e23e87-21c3-497a-ab00-514ed1a23279-mobile-l-one-4"><div kind="layout" style="position: relative" sequence="one" diff_index="0" index="one" class="colors-use-local w_titles layout one i first_layout last_layout footer layout one" id="u-07e23e87-21c3-497a-ab00-514ed1a23279-mobile-l-one-4-l-one"></div><style id="u-07e23e87-21c3-497a-ab00-514ed1a23279-color">body{background-color: rgba(220, 218, 150, 1)}</style></section><article subject="panel" class="col-1 export-linebreaks not_decorated color_adjust_none color_styles_no_group_bg color_schema_default stack_transparency_off v_emphasis_none h_emphasis_none group_overlap_none stack_v_outset_none stack_v_inset_none stack_h_outset_none stack_h_inset_xsmall stack_h_align_center uninverted vertical collapsed full line_padding_aside_inside text_width_full group_h_align_none text_align_center flow_unreversed group_v_outset_none group_v_inset_none group_h_outset_none group_h_inset_xsmall flow_vertical font_size_small panel stack heading i first_panel last_panel w_headline w_title w_decoration w_short_headline w_short_title stack heading" itemid="u-page-nav" itemtype="nav" diff_index="2" index="heading" kind="stack" score="1.875" missed="0.125" tag="article" id="u-07e23e87-21c3-497a-ab00-514ed1a23279-nav"><div kind="group" index="heading" class="group heading group heading" id="u-07e23e87-21c3-497a-ab00-514ed1a23279-nav-g-heading"><h1 kind="title" index="headline" class="short short_headline short_title title headline vfld-leader vfld-trailer title headline" specificity="0.25" itemprop="title" id="u-07e23e87-21c3-497a-ab00-514ed1a23279-nav-g-heading-t-headline"><a class="text-decoration" href="index.html" id="u-07e23e87-21c3-497a-ab00-514ed1a23279-nav-g-heading-t-headline-a">LottoPools</a></h1></div></article><article subject="feature" class="col-1 export-linebreaks not_decorated color_adjust_overlay color_styles_text_emphasis_no_bg color_schema_default stack_transparency_off v_emphasis_none h_emphasis_none group_overlap_none stack_v_outset_none stack_v_inset_none stack_h_outset_none stack_h_inset_none stack_h_align_center uninverted horizontal fullscreen_first full aspect_any line_padding_outside text_width_wide group_h_align_none text_align_left flow_unreversed group_v_outset_none group_v_inset_small group_h_outset_none group_h_inset_huge flow_horizontal font_size_large feature stack bg_textual i first_feature last_feature textual w_cover w_media w_paragraph w_text w_decoration w_long_paragraph w_long_text media_gte_narrow media_lt_half media_lt_wide media_lt_full media_landscape crop_true stack bg_textual" itemid="5313e003-bbe5-4a2b-a843-1ab455aa90af" itemtype="intro" diff_index="5" index="bg_textual" kind="stack" score="3.875" missed="0.625" tag="article" id="u-5313e003-bbe5-4a2b-a843-1ab455aa90af"><div kind="group" index="textual" class="group textual group textual" id="u-5313e003-bbe5-4a2b-a843-1ab455aa90af-g-textual"><div kind="text" index="paragraph" class="text-decoration long long_paragraph long_text text paragraph vfld-leader vfld-trailer text paragraph" itemprop="text" id="u-5313e003-bbe5-4a2b-a843-1ab455aa90af-g-textual-t-paragraph"><p><span class="first-letter">T</span>he largest jackpot in <wbr class="w480"></wbr>U.S. history <wbr class="w960"></wbr>-- <wbr class="w481"></wbr>now an <wbr class="w480 w961 w1799"></wbr>estimated $700 <wbr class="w1800"></wbr>million <wbr class="w480 w960"></wbr>- <wbr class="w481"></wbr>will be up for grabs in <wbr class="w480 w961 w1799"></wbr>Saturday <wbr class="w481 w960"></wbr>night's <wbr class="w480"></wbr>drawing after no <wbr class="w1800"></wbr>one <wbr class="w480 w481 w960"></wbr>produced <wbr class="w961 w1799"></wbr>the magic <wbr class="w480 w960"></wbr>combination of <wbr class="w481"></wbr>47, 2, <wbr class="w480"></wbr>63, 62, 11 <wbr class="w960"></wbr>and the <wbr class="w480 w961 w1799 w1800"></wbr>Powerball <wbr class="w481"></wbr>of 17 to win <wbr class="w480 w960"></wbr>Wednesday night's <wbr class="w480 w481"></wbr>$524 <wbr class="w961 w1799"></wbr>million <wbr class="w960"></wbr>jackpot. <wbr class="w480 w1800"></wbr>The prize had <wbr class="w481"></wbr>surged <wbr class="w480 w960"></wbr>from $450 <wbr class="w961 w1799"></wbr>million. The <wbr class="w480 w481"></wbr>payout <wbr class="w960"></wbr>would have <wbr class="w480 w1800"></wbr>had an <wbr class="w481"></wbr>estimated <wbr class="w960 w961 w1799"></wbr>cash <wbr class="w480"></wbr>value of about <wbr class="w481"></wbr>$428.4 <wbr class="w480 w960"></wbr>million, before <wbr class="w1800"></wbr>taxes, <wbr class="w480 w481 w961 w1799"></wbr>according <wbr class="w960"></wbr>to the <wbr class="w480"></wbr>Powerball website. <wbr class="w481"></wbr>The <wbr class="w480 w960"></wbr>final <wbr class="w1799"></wbr>take-<wbr class="w961"></wbr>home <wbr class="w480 w1800"></wbr>amount <wbr class="w481 w960"></wbr>depends on <wbr class="w480"></wbr>an individual's <wbr class="w1799"></wbr>tax <wbr class="w960"></wbr>rate <wbr class="w480 w481 w961"></wbr>and the state and <wbr class="w1800"></wbr>local <wbr class="w480"></wbr>taxes <wbr class="w960"></wbr>in <wbr class="w481"></wbr>their <wbr class="w1799"></wbr>state of <wbr class="w480 w961"></wbr>residence, Tracey <wbr class="w480 w481 w960"></wbr>Cohen, the interim <wbr class="w480 w1799 w1800"></wbr>executive <wbr class="w481 w960 w961"></wbr>director of <wbr class="w480"></wbr>the D.C. Lottery, told <wbr class="w480 w481 w960"></wbr>ABC <wbr class="w1799"></wbr>News. The <wbr class="w961"></wbr>largest <wbr class="w480 w1800"></wbr>lottery <wbr class="w481 w960"></wbr>jackpot to date <wbr class="w480"></wbr>was won <wbr class="w1799"></wbr>in three <wbr class="w481 w960 w961"></wbr>states <wbr class="w480"></wbr>in March 2012, <wbr class="w1800"></wbr>when <wbr class="w480"></wbr>the <wbr class="w481 w960"></wbr>Mega <wbr class="w1799"></wbr>Millions <wbr class="w480 w961"></wbr>drawing reached a <wbr class="w480 w481 w960"></wbr>whopping $656 <wbr class="w480 w1799 w1800"></wbr>million.</p></div></div><a kind="media" index="cover" itemprop="cover" class="media cover media cover" max-width="635" max-height="476" href="largest-jackpot-in-us-history/" id="u-5313e003-bbe5-4a2b-a843-1ab455aa90af-m-cover"><picture id="u-5313e003-bbe5-4a2b-a843-1ab455aa90af-m-cover-img" class=""><!--[if IE 9]><video style="display: none;"><![endif]--><source srcset="https://imgflo.herokuapp.com/graph/vahj1ThiexotieMo/e405c32121fb0ac8102030f1c413262a/passthrough.jpg?height=476&input=https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fthe-grid-img%2Fp%2Fbd2f45c337ca52ad7bd328b01585b4d5c68353dd.jpg&width=635, https://imgflo.herokuapp.com/graph/vahj1ThiexotieMo/e405c32121fb0ac8102030f1c413262a/passthrough.jpg?height=476&input=https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fthe-grid-img%2Fp%2Fbd2f45c337ca52ad7bd328b01585b4d5c68353dd.jpg&width=635 2x" media="(min-width: 1441px) and (min-width: 1441px) and (max-width: 1799px) " /><source srcset="https://imgflo.herokuapp.com/graph/vahj1ThiexotieMo/e405c32121fb0ac8102030f1c413262a/passthrough.jpg?height=476&input=https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fthe-grid-img%2Fp%2Fbd2f45c337ca52ad7bd328b01585b4d5c68353dd.jpg&width=635, https://imgflo.herokuapp.com/graph/vahj1ThiexotieMo/e405c32121fb0ac8102030f1c413262a/passthrough.jpg?height=476&input=https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fthe-grid-img%2Fp%2Fbd2f45c337ca52ad7bd328b01585b4d5c68353dd.jpg&width=635 2x" media="(min-width: 1441px) and (min-width: 1800px) " /><source srcset="https://imgflo.herokuapp.com/graph/vahj1ThiexotieMo/e405c32121fb0ac8102030f1c413262a/passthrough.jpg?height=476&input=https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fthe-grid-img%2Fp%2Fbd2f45c337ca52ad7bd328b01585b4d5c68353dd.jpg&width=635, https://imgflo.herokuapp.com/graph/vahj1ThiexotieMo/e405c32121fb0ac8102030f1c413262a/passthrough.jpg?height=476&input=https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fthe-grid-img%2Fp%2Fbd2f45c337ca52ad7bd328b01585b4d5c68353dd.jpg&width=635 2x" media="(min-width: 721px) and (min-width: 721px) and (max-width: 960px) " /><source srcset="https://imgflo.herokuapp.com/graph/vahj1ThiexotieMo/e405c32121fb0ac8102030f1c413262a/passthrough.jpg?height=476&input=https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fthe-grid-img%2Fp%2Fbd2f45c337ca52ad7bd328b01585b4d5c68353dd.jpg&width=635, https://imgflo.herokuapp.com/graph/vahj1ThiexotieMo/e405c32121fb0ac8102030f1c413262a/passthrough.jpg?height=476&input=https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fthe-grid-img%2Fp%2Fbd2f45c337ca52ad7bd328b01585b4d5c68353dd.jpg&width=635 2x" media="(min-width: 721px) and (min-width: 961px) and (max-width: 1440px)" /><source srcset="https://imgflo.herokuapp.com/graph/vahj1ThiexotieMo/e405c32121fb0ac8102030f1c413262a/passthrough.jpg?height=476&input=https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fthe-grid-img%2Fp%2Fbd2f45c337ca52ad7bd328b01585b4d5c68353dd.jpg&width=635, https://imgflo.herokuapp.com/graph/vahj1ThiexotieMo/e405c32121fb0ac8102030f1c413262a/passthrough.jpg?height=476&input=https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fthe-grid-img%2Fp%2Fbd2f45c337ca52ad7bd328b01585b4d5c68353dd.jpg&width=635 2x" media="(min-width: 1px) and (max-width: 480px) " /><source srcset="https://imgflo.herokuapp.com/graph/vahj1ThiexotieMo/e405c32121fb0ac8102030f1c413262a/passthrough.jpg?height=476&input=https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fthe-grid-img%2Fp%2Fbd2f45c337ca52ad7bd328b01585b4d5c68353dd.jpg&width=635, https://imgflo.herokuapp.com/graph/vahj1ThiexotieMo/e405c32121fb0ac8102030f1c413262a/passthrough.jpg?height=476&input=https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fthe-grid-img%2Fp%2Fbd2f45c337ca52ad7bd328b01585b4d5c68353dd.jpg&width=635 2x" media="(min-width: 1px) and (min-width: 481px) and (max-width: 720px)" /><!--[if IE 9]></video><![endif]--><img src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw=="  /></picture></a></article><article subject="stack" class="col-1 export-linebreaks not_decorated color_adjust_none color_styles_text_emphasis_no_bg color_schema_default stack_transparency_off v_emphasis_none h_emphasis_none group_overlap_none stack_v_outset_none stack_v_inset_xsmall stack_h_outset_none stack_h_inset_xsmall stack_h_align_center uninverted vertical collapsed full aspect_natural line_padding_inside text_width_wider group_h_align_none text_align_left flow_unreversed group_v_outset_none group_v_inset_small group_h_outset_none group_h_inset_small flow_vertical font_size_large stack bg_heading i first_stack last_stack heading w_cover w_media w_headline w_title w_decoration w_short_headline w_short_title media_gte_narrow media_lt_half media_lt_wide media_lt_full media_landscape crop_true stack bg_heading" itemid="e484eb04-9220-4e4f-aae3-a6d411350335" itemtype="article" diff_index="7" index="bg_heading" kind="stack" score="5.875" missed="0.125" tag="article" id="u-e484eb04-9220-4e4f-aae3-a6d411350335"><div kind="group" index="heading" class="group heading group heading" id="u-e484eb04-9220-4e4f-aae3-a6d411350335-g-heading"><h1 kind="title" index="headline" class="short short_headline short_title title headline vfld-leader vfld-trailer title headline" specificity="0.25" itemprop="title" id="u-e484eb04-9220-4e4f-aae3-a6d411350335-g-heading-t-headline"><a class="text-decoration" href="dollar700m-powerball-jackpot/" id="u-e484eb04-9220-4e4f-aae3-a6d411350335-g-heading-t-headline-a"><b data-grid-id="4a354056-a3d9-4f1a-aa28-3516b20d8cf3">$700M <wbr class="w480 w960 w961 w1799"></wbr>Powerball <wbr class="w480 w481 w960 w961 w1799 w1800"></wbr>Jackpot</b></a></h1></div><a kind="media" index="cover" itemprop="cover" class="media cover media cover" max-width="534" max-height="401" href="dollar700m-powerball-jackpot/" id="u-e484eb04-9220-4e4f-aae3-a6d411350335-m-cover"><picture id="u-e484eb04-9220-4e4f-aae3-a6d411350335-m-cover-img" class=""><!--[if IE 9]><video style="display: none;"><![endif]--><source srcset="https://imgflo.herokuapp.com/graph/vahj1ThiexotieMo/9c2fc8a41dd417cd6141160991d44df9/gradientmap.jpg?color1=%2329280A&color2=%23525014&color3=%23A4A028&color4=%23CEDE87&color5=%23EFF4D7&height=401&input=https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fthe-grid-img%2Fp%2Fbfd64abc66f65ccb56e97118344aed352a4b1012.jpg&srgb=True&stop1=0.1&stop2=0.3&stop3=0.5&stop4=0.7&stop5=0.9&width=534, https://imgflo.herokuapp.com/graph/vahj1ThiexotieMo/9c2fc8a41dd417cd6141160991d44df9/gradientmap.jpg?color1=%2329280A&color2=%23525014&color3=%23A4A028&color4=%23CEDE87&color5=%23EFF4D7&height=401&input=https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fthe-grid-img%2Fp%2Fbfd64abc66f65ccb56e97118344aed352a4b1012.jpg&srgb=True&stop1=0.1&stop2=0.3&stop3=0.5&stop4=0.7&stop5=0.9&width=534 2x" media="(min-width: 1441px) and (min-width: 1441px) and (max-width: 1799px) " /><source srcset="https://imgflo.herokuapp.com/graph/vahj1ThiexotieMo/9c2fc8a41dd417cd6141160991d44df9/gradientmap.jpg?color1=%2329280A&color2=%23525014&color3=%23A4A028&color4=%23CEDE87&color5=%23EFF4D7&height=401&input=https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fthe-grid-img%2Fp%2Fbfd64abc66f65ccb56e97118344aed352a4b1012.jpg&srgb=True&stop1=0.1&stop2=0.3&stop3=0.5&stop4=0.7&stop5=0.9&width=534, https://imgflo.herokuapp.com/graph/vahj1ThiexotieMo/9c2fc8a41dd417cd6141160991d44df9/gradientmap.jpg?color1=%2329280A&color2=%23525014&color3=%23A4A028&color4=%23CEDE87&color5=%23EFF4D7&height=401&input=https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fthe-grid-img%2Fp%2Fbfd64abc66f65ccb56e97118344aed352a4b1012.jpg&srgb=True&stop1=0.1&stop2=0.3&stop3=0.5&stop4=0.7&stop5=0.9&width=534 2x" media="(min-width: 1441px) and (min-width: 1800px) " /><source srcset="https://imgflo.herokuapp.com/graph/vahj1ThiexotieMo/9c2fc8a41dd417cd6141160991d44df9/gradientmap.jpg?color1=%2329280A&color2=%23525014&color3=%23A4A028&color4=%23CEDE87&color5=%23EFF4D7&height=401&input=https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fthe-grid-img%2Fp%2Fbfd64abc66f65ccb56e97118344aed352a4b1012.jpg&srgb=True&stop1=0.1&stop2=0.3&stop3=0.5&stop4=0.7&stop5=0.9&width=534, https://imgflo.herokuapp.com/graph/vahj1ThiexotieMo/9c2fc8a41dd417cd6141160991d44df9/gradientmap.jpg?color1=%2329280A&color2=%23525014&color3=%23A4A028&color4=%23CEDE87&color5=%23EFF4D7&height=401&input=https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fthe-grid-img%2Fp%2Fbfd64abc66f65ccb56e97118344aed352a4b1012.jpg&srgb=True&stop1=0.1&stop2=0.3&stop3=0.5&stop4=0.7&stop5=0.9&width=534 2x" media="(min-width: 721px) and (min-width: 721px) and (max-width: 960px) " /><source srcset="https://imgflo.herokuapp.com/graph/vahj1ThiexotieMo/9c2fc8a41dd417cd6141160991d44df9/gradientmap.jpg?color1=%2329280A&color2=%23525014&color3=%23A4A028&color4=%23CEDE87&color5=%23EFF4D7&height=401&input=https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fthe-grid-img%2Fp%2Fbfd64abc66f65ccb56e97118344aed352a4b1012.jpg&srgb=True&stop1=0.1&stop2=0.3&stop3=0.5&stop4=0.7&stop5=0.9&width=534, https://imgflo.herokuapp.com/graph/vahj1ThiexotieMo/9c2fc8a41dd417cd6141160991d44df9/gradientmap.jpg?color1=%2329280A&color2=%23525014&color3=%23A4A028&color4=%23CEDE87&color5=%23EFF4D7&height=401&input=https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fthe-grid-img%2Fp%2Fbfd64abc66f65ccb56e97118344aed352a4b1012.jpg&srgb=True&stop1=0.1&stop2=0.3&stop3=0.5&stop4=0.7&stop5=0.9&width=534 2x" media="(min-width: 721px) and (min-width: 961px) and (max-width: 1440px)" /><source srcset="https://imgflo.herokuapp.com/graph/vahj1ThiexotieMo/878a13f008815852eb929ae0716fa51c/gradientmap.jpg?color1=%2329280A&color2=%23525014&color3=%23A4A028&color4=%23CEDE87&color5=%23EFF4D7&height=355&input=https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fthe-grid-img%2Fp%2Fbfd64abc66f65ccb56e97118344aed352a4b1012.jpg&srgb=True&stop1=0.1&stop2=0.3&stop3=0.5&stop4=0.7&stop5=0.9&width=472, https://imgflo.herokuapp.com/graph/vahj1ThiexotieMo/9c2fc8a41dd417cd6141160991d44df9/gradientmap.jpg?color1=%2329280A&color2=%23525014&color3=%23A4A028&color4=%23CEDE87&color5=%23EFF4D7&height=401&input=https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fthe-grid-img%2Fp%2Fbfd64abc66f65ccb56e97118344aed352a4b1012.jpg&srgb=True&stop1=0.1&stop2=0.3&stop3=0.5&stop4=0.7&stop5=0.9&width=534 2x" media="(min-width: 1px) and (max-width: 480px) " /><source srcset="https://imgflo.herokuapp.com/graph/vahj1ThiexotieMo/9c2fc8a41dd417cd6141160991d44df9/gradientmap.jpg?color1=%2329280A&color2=%23525014&color3=%23A4A028&color4=%23CEDE87&color5=%23EFF4D7&height=401&input=https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fthe-grid-img%2Fp%2Fbfd64abc66f65ccb56e97118344aed352a4b1012.jpg&srgb=True&stop1=0.1&stop2=0.3&stop3=0.5&stop4=0.7&stop5=0.9&width=534, https://imgflo.herokuapp.com/graph/vahj1ThiexotieMo/9c2fc8a41dd417cd6141160991d44df9/gradientmap.jpg?color1=%2329280A&color2=%23525014&color3=%23A4A028&color4=%23CEDE87&color5=%23EFF4D7&height=401&input=https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fthe-grid-img%2Fp%2Fbfd64abc66f65ccb56e97118344aed352a4b1012.jpg&srgb=True&stop1=0.1&stop2=0.3&stop3=0.5&stop4=0.7&stop5=0.9&width=534 2x" media="(min-width: 1px) and (min-width: 481px) and (max-width: 720px)" /><!--[if IE 9]></video><![endif]--><img src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw=="  /></picture></a></article><article subject="panel" class="col-1 export-linebreaks not_decorated color_adjust_none color_styles_no_group_bg color_schema_default stack_transparency_off v_emphasis_none h_emphasis_none group_overlap_none stack_v_outset_none stack_v_inset_none stack_h_outset_none stack_h_inset_xsmall stack_h_align_center uninverted vertical collapsed full line_padding_aside_inside text_width_full group_h_align_none text_align_center flow_unreversed group_v_outset_none group_v_inset_none group_h_outset_none group_h_inset_xsmall flow_vertical font_size_small panel stack heading i first_panel last_panel w_headline w_title w_decoration w_short_headline w_short_title stack heading" itemid="u-page-alternate" itemtype="alternate" diff_index="2" index="heading" kind="stack" score="1.875" missed="0.125" tag="article" id="u-07e23e87-21c3-497a-ab00-514ed1a23279-alternate"><div kind="group" index="heading" class="group heading group heading" id="u-07e23e87-21c3-497a-ab00-514ed1a23279-alternate-g-heading"><h1 kind="title" index="headline" class="short short_headline short_title title headline vfld-leader vfld-trailer title headline" specificity="0.25" itemprop="title" id="u-07e23e87-21c3-497a-ab00-514ed1a23279-alternate-g-heading-t-headline"><a class="text-decoration" href="rss.xml" id="u-07e23e87-21c3-497a-ab00-514ed1a23279-alternate-g-heading-t-headline-a">LottoPools feed</a></h1></div></article><section kind="layout" style="position: relative" sequence="one" role="header" diff_index="0" index="one" class="layout one i first_layout w_headline w_title w_separator w_decoration w_leader w_trailer w_icon w_short_headline w_short_title layout one" id="u-07e23e87-21c3-497a-ab00-514ed1a23279-desktop-l-one"><div kind="layout" style="position: relative" sequence="one" diff_index="0" index="one" class="colors-use-local w_titles layout one i first_layout last_layout header layout one" id="u-07e23e87-21c3-497a-ab00-514ed1a23279-desktop-l-one-l-one"></div></section><section kind="layout" style="position: relative" sequence="one" role="opener" diff_index="0" index="one" class="layout one i w_paragraph w_text w_separator w_decoration w_leader w_long_paragraph w_long_text media_gte_narrow media_lt_half media_lt_wide media_lt_full media_landscape crop_true layout one" id="u-07e23e87-21c3-497a-ab00-514ed1a23279-desktop-l-one-2"><div kind="layout" style="position: relative" sequence="one" diff_index="0" index="one" class="colors-use-local w_medias w_texts layout one i first_layout last_layout opener layout one" id="u-07e23e87-21c3-497a-ab00-514ed1a23279-desktop-l-one-2-l-one"></div></section><section kind="layout" style="position: relative" sequence="one" role="feed" diff_index="0" index="one" class="layout one i w_headline w_title w_separator w_decoration w_leader w_trailer w_icon w_short_headline w_short_title media_gte_narrow media_lt_half media_lt_wide media_lt_full media_landscape crop_true layout one" id="u-07e23e87-21c3-497a-ab00-514ed1a23279-desktop-l-one-3"><div kind="layout" style="position: relative" sequence="one" diff_index="0" index="one" class="colors-use-local w_medias w_titles layout one i first_layout last_layout feed layout one" id="u-07e23e87-21c3-497a-ab00-514ed1a23279-desktop-l-one-3-l-one"></div></section><section kind="layout" style="position: relative" sequence="one" role="footer" diff_index="0" index="one" class="layout one i last_layout w_headline w_title w_separator w_decoration w_leader w_trailer w_icon w_short_headline w_short_title layout one" id="u-07e23e87-21c3-497a-ab00-514ed1a23279-desktop-l-one-4"><div kind="layout" style="position: relative" sequence="one" diff_index="0" index="one" class="colors-use-local w_titles layout one i first_layout last_layout footer layout one" id="u-07e23e87-21c3-497a-ab00-514ed1a23279-desktop-l-one-4-l-one"></div><style id="u-07e23e87-21c3-497a-ab00-514ed1a23279-color">body{background-color: rgba(220, 218, 150, 1)}</style></section><section kind="layout" style="position: relative" sequence="one" role="header" diff_index="0" index="one" class="layout one i first_layout w_headline w_title w_separator w_decoration w_leader w_trailer w_icon w_short_headline w_short_title layout one" id="u-07e23e87-21c3-497a-ab00-514ed1a23279-cinema-l-one"><div kind="layout" style="position: relative" sequence="one" diff_index="0" index="one" class="colors-use-local w_titles layout one i first_layout last_layout header layout one" id="u-07e23e87-21c3-497a-ab00-514ed1a23279-cinema-l-one-l-one"></div></section><section kind="layout" style="position: relative" sequence="one" role="opener" diff_index="0" index="one" class="layout one i w_paragraph w_text w_separator w_decoration w_leader w_long_paragraph w_long_text media_gte_narrow media_lt_half media_lt_wide media_lt_full media_landscape crop_true layout one" id="u-07e23e87-21c3-497a-ab00-514ed1a23279-cinema-l-one-2"><div kind="layout" style="position: relative" sequence="one" diff_index="0" index="one" class="colors-use-local w_medias w_texts layout one i first_layout last_layout opener layout one" id="u-07e23e87-21c3-497a-ab00-514ed1a23279-cinema-l-one-2-l-one"></div></section><section kind="layout" style="position: relative" sequence="one" role="feed" diff_index="0" index="one" class="layout one i w_headline w_title w_separator w_decoration w_leader w_trailer w_icon w_short_headline w_short_title media_gte_narrow media_lt_half media_lt_wide media_lt_full media_landscape crop_true layout one" id="u-07e23e87-21c3-497a-ab00-514ed1a23279-cinema-l-one-3"><div kind="layout" style="position: relative" sequence="one" diff_index="0" index="one" class="colors-use-local w_medias w_titles layout one i first_layout last_layout feed layout one" id="u-07e23e87-21c3-497a-ab00-514ed1a23279-cinema-l-one-3-l-one"></div></section><section kind="layout" style="position: relative" sequence="one" role="footer" diff_index="0" index="one" class="layout one i last_layout w_headline w_title w_separator w_decoration w_leader w_trailer w_icon w_short_headline w_short_title layout one" id="u-07e23e87-21c3-497a-ab00-514ed1a23279-cinema-l-one-4"><div kind="layout" style="position: relative" sequence="one" diff_index="0" index="one" class="colors-use-local w_titles layout one i first_layout last_layout footer layout one" id="u-07e23e87-21c3-497a-ab00-514ed1a23279-cinema-l-one-4-l-one"></div><style id="u-07e23e87-21c3-497a-ab00-514ed1a23279-color">body{background-color: rgba(220, 218, 150, 1)}</style></section></div><script href="./client.js">(function e(t,n,r){function s(o,u){if(!n[o]){if(!t[o]){var a=typeof require=="function"&&require;if(!u&&a)return a(o,!0);if(i)return i(o,!0);var f=new Error("Cannot find module '"+o+"'");throw f.code="MODULE_NOT_FOUND",f}var l=n[o]={exports:{}};t[o][0].call(l.exports,function(e){var n=t[o][1][e];return s(n?n:e)},l,l.exports,e,t,n,r)}return n[o].exports}var i=typeof require=="function"&&require;for(var o=0;o<r.length;o++)s(r[o]);return s})({1:[function(require,module,exports){
+}</style></head><body><div class="layout-system rust mobile" id="page-07e23e87-21c3-497a-ab00-514ed1a23279"><section kind="layout" style="position: relative" sequence="one" role="header" diff_index="0" index="one" class="layout one i first_layout w_headline w_title w_separator w_decoration w_leader w_trailer w_icon w_short_headline w_short_title layout one" id="u-07e23e87-21c3-497a-ab00-514ed1a23279-mobile-l-one"><div kind="layout" style="position: relative" sequence="one" diff_index="0" index="one" class="colors-use-local w_titles layout one i first_layout last_layout header layout one" id="u-07e23e87-21c3-497a-ab00-514ed1a23279-mobile-l-one-l-one"></div></section><section kind="layout" style="position: relative" sequence="one" role="opener" diff_index="0" index="one" class="layout one i w_paragraph w_text w_separator w_decoration w_leader w_long_paragraph w_long_text media_gte_narrow media_lt_half media_lt_wide media_lt_full media_landscape crop_true layout one" id="u-07e23e87-21c3-497a-ab00-514ed1a23279-mobile-l-one-2"><div kind="layout" style="position: relative" sequence="one" diff_index="0" index="one" class="colors-use-local w_medias w_texts layout one i first_layout last_layout opener layout one" id="u-07e23e87-21c3-497a-ab00-514ed1a23279-mobile-l-one-2-l-one"></div></section><section kind="layout" style="position: relative" sequence="one" role="feed" diff_index="0" index="one" class="layout one i w_headline w_title w_separator w_decoration w_leader w_trailer w_icon w_short_headline w_short_title media_gte_narrow media_lt_half media_lt_wide media_lt_full media_landscape crop_true layout one" id="u-07e23e87-21c3-497a-ab00-514ed1a23279-mobile-l-one-3"><div kind="layout" style="position: relative" sequence="one" diff_index="0" index="one" class="colors-use-local w_medias w_titles layout one i first_layout last_layout feed layout one" id="u-07e23e87-21c3-497a-ab00-514ed1a23279-mobile-l-one-3-l-one"></div></section><section kind="layout" style="position: relative" sequence="one" role="footer" diff_index="0" index="one" class="layout one i last_layout w_headline w_title w_separator w_decoration w_leader w_trailer w_icon w_short_headline w_short_title layout one" id="u-07e23e87-21c3-497a-ab00-514ed1a23279-mobile-l-one-4"><div kind="layout" style="position: relative" sequence="one" diff_index="0" index="one" class="colors-use-local w_titles layout one i first_layout last_layout footer layout one" id="u-07e23e87-21c3-497a-ab00-514ed1a23279-mobile-l-one-4-l-one"></div><style id="u-07e23e87-21c3-497a-ab00-514ed1a23279-color">body{background-color: rgba(220, 218, 150, 1)}</style></section><article subject="panel" class="col-1 export-linebreaks not_decorated color_adjust_none color_styles_no_group_bg color_schema_default stack_transparency_off v_emphasis_none h_emphasis_none group_overlap_none stack_v_outset_none stack_v_inset_none stack_h_outset_none stack_h_inset_xsmall stack_h_align_center uninverted vertical collapsed full line_padding_aside_inside text_width_full group_h_align_none text_align_center flow_unreversed group_v_outset_none group_v_inset_none group_h_outset_none group_h_inset_xsmall flow_vertical font_size_small panel stack heading i first_panel last_panel w_headline w_title w_decoration w_short_headline w_short_title stack heading" itemid="u-page-nav" itemtype="nav" diff_index="2" index="heading" kind="stack" score="1.875" missed="0.125" tag="article" id="u-07e23e87-21c3-497a-ab00-514ed1a23279-nav"><div kind="group" index="heading" class="group heading group heading" id="u-07e23e87-21c3-497a-ab00-514ed1a23279-nav-g-heading"><h1 kind="title" index="headline" class="short short_headline short_title title headline vfld-leader vfld-trailer title headline" specificity="0.25" itemprop="title" id="u-07e23e87-21c3-497a-ab00-514ed1a23279-nav-g-heading-t-headline"><a class="text-decoration" href="index.html" id="u-07e23e87-21c3-497a-ab00-514ed1a23279-nav-g-heading-t-headline-a">LottoPools</a></h1></div></article><article subject="feature" class="col-1 export-linebreaks not_decorated color_adjust_overlay color_styles_text_emphasis_no_bg color_schema_default stack_transparency_off v_emphasis_none h_emphasis_none group_overlap_none stack_v_outset_none stack_v_inset_none stack_h_outset_none stack_h_inset_none stack_h_align_center uninverted horizontal fullscreen_first full aspect_any line_padding_outside text_width_wide group_h_align_none text_align_left flow_unreversed group_v_outset_none group_v_inset_small group_h_outset_none group_h_inset_huge flow_horizontal font_size_large feature stack bg_textual i first_feature last_feature textual w_cover w_media w_paragraph w_text w_decoration w_long_paragraph w_long_text media_gte_narrow media_lt_half media_lt_wide media_lt_full media_landscape crop_true stack bg_textual" itemid="5313e003-bbe5-4a2b-a843-1ab455aa90af" itemtype="intro" diff_index="6" index="bg_textual" kind="stack" score="3.875" missed="0.625" tag="article" id="u-5313e003-bbe5-4a2b-a843-1ab455aa90af"><div kind="group" index="textual" class="group textual group textual" id="u-5313e003-bbe5-4a2b-a843-1ab455aa90af-g-textual"><div kind="text" index="paragraph" class="text-decoration long long_paragraph long_text text paragraph vfld-leader vfld-trailer text paragraph" itemprop="text" id="u-5313e003-bbe5-4a2b-a843-1ab455aa90af-g-textual-t-paragraph"><p><span class="first-letter">T</span>he largest jackpot in <wbr class="w480"></wbr>U.S. history <wbr class="w960"></wbr>-- <wbr class="w481"></wbr>now an <wbr class="w480 w961 w1799"></wbr>estimated $700 <wbr class="w1800"></wbr>million <wbr class="w480 w960"></wbr>- <wbr class="w481"></wbr>will be up for grabs in <wbr class="w480 w961 w1799"></wbr>Saturday <wbr class="w481 w960"></wbr>night's <wbr class="w480"></wbr>drawing after no <wbr class="w1800"></wbr>one <wbr class="w480 w481 w960"></wbr>produced <wbr class="w961 w1799"></wbr>the magic <wbr class="w480 w960"></wbr>combination of <wbr class="w481"></wbr>47, 2, <wbr class="w480"></wbr>63, 62, 11 <wbr class="w960"></wbr>and the <wbr class="w480 w961 w1799 w1800"></wbr>Powerball <wbr class="w481"></wbr>of 17 to win <wbr class="w480 w960"></wbr>Wednesday night's <wbr class="w480 w481"></wbr>$524 <wbr class="w961 w1799"></wbr>million <wbr class="w960"></wbr>jackpot. <wbr class="w480 w1800"></wbr>The prize had <wbr class="w481"></wbr>surged <wbr class="w480 w960"></wbr>from $450 <wbr class="w961 w1799"></wbr>million. The <wbr class="w480 w481"></wbr>payout <wbr class="w960"></wbr>would have <wbr class="w480 w1800"></wbr>had an <wbr class="w481"></wbr>estimated <wbr class="w960 w961 w1799"></wbr>cash <wbr class="w480"></wbr>value of about <wbr class="w481"></wbr>$428.4 <wbr class="w480 w960"></wbr>million, before <wbr class="w1800"></wbr>taxes, <wbr class="w480 w481 w961 w1799"></wbr>according <wbr class="w960"></wbr>to the <wbr class="w480"></wbr>Powerball website. <wbr class="w481"></wbr>The <wbr class="w480 w960"></wbr>final <wbr class="w1799"></wbr>take-<wbr class="w961"></wbr>home <wbr class="w480 w1800"></wbr>amount <wbr class="w481 w960"></wbr>depends on <wbr class="w480"></wbr>an individual's <wbr class="w1799"></wbr>tax <wbr class="w960"></wbr>rate <wbr class="w480 w481 w961"></wbr>and the state and <wbr class="w1800"></wbr>local <wbr class="w480"></wbr>taxes <wbr class="w960"></wbr>in <wbr class="w481"></wbr>their <wbr class="w1799"></wbr>state of <wbr class="w480 w961"></wbr>residence, Tracey <wbr class="w480 w481 w960"></wbr>Cohen, the interim <wbr class="w480 w1799 w1800"></wbr>executive <wbr class="w481 w960 w961"></wbr>director of <wbr class="w480"></wbr>the D.C. Lottery, told <wbr class="w480 w481 w960"></wbr>ABC <wbr class="w1799"></wbr>News. The <wbr class="w961"></wbr>largest <wbr class="w480 w1800"></wbr>lottery <wbr class="w481 w960"></wbr>jackpot to date <wbr class="w480"></wbr>was won <wbr class="w1799"></wbr>in three <wbr class="w481 w960 w961"></wbr>states <wbr class="w480"></wbr>in March 2012, <wbr class="w1800"></wbr>when <wbr class="w480"></wbr>the <wbr class="w481 w960"></wbr>Mega <wbr class="w1799"></wbr>Millions <wbr class="w480 w961"></wbr>drawing reached a <wbr class="w480 w481 w960"></wbr>whopping $656 <wbr class="w480 w1799 w1800"></wbr>million.</p></div></div><a kind="media" index="cover" itemprop="cover" class="media cover media cover" max-width="635" max-height="476" href="largest-jackpot-in-us-history/" id="u-5313e003-bbe5-4a2b-a843-1ab455aa90af-m-cover"><picture id="u-5313e003-bbe5-4a2b-a843-1ab455aa90af-m-cover-img" class=""><!--[if IE 9]><video style="display: none;"><![endif]--><source srcset="https://imgflo.herokuapp.com/graph/vahj1ThiexotieMo/e405c32121fb0ac8102030f1c413262a/passthrough.jpg?height=476&input=https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fthe-grid-img%2Fp%2Fbd2f45c337ca52ad7bd328b01585b4d5c68353dd.jpg&width=635, https://imgflo.herokuapp.com/graph/vahj1ThiexotieMo/e405c32121fb0ac8102030f1c413262a/passthrough.jpg?height=476&input=https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fthe-grid-img%2Fp%2Fbd2f45c337ca52ad7bd328b01585b4d5c68353dd.jpg&width=635 2x" media="(min-width: 1441px) and (min-width: 1441px) and (max-width: 1799px) " /><source srcset="https://imgflo.herokuapp.com/graph/vahj1ThiexotieMo/e405c32121fb0ac8102030f1c413262a/passthrough.jpg?height=476&input=https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fthe-grid-img%2Fp%2Fbd2f45c337ca52ad7bd328b01585b4d5c68353dd.jpg&width=635, https://imgflo.herokuapp.com/graph/vahj1ThiexotieMo/e405c32121fb0ac8102030f1c413262a/passthrough.jpg?height=476&input=https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fthe-grid-img%2Fp%2Fbd2f45c337ca52ad7bd328b01585b4d5c68353dd.jpg&width=635 2x" media="(min-width: 1441px) and (min-width: 1800px) " /><source srcset="https://imgflo.herokuapp.com/graph/vahj1ThiexotieMo/e405c32121fb0ac8102030f1c413262a/passthrough.jpg?height=476&input=https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fthe-grid-img%2Fp%2Fbd2f45c337ca52ad7bd328b01585b4d5c68353dd.jpg&width=635, https://imgflo.herokuapp.com/graph/vahj1ThiexotieMo/e405c32121fb0ac8102030f1c413262a/passthrough.jpg?height=476&input=https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fthe-grid-img%2Fp%2Fbd2f45c337ca52ad7bd328b01585b4d5c68353dd.jpg&width=635 2x" media="(min-width: 721px) and (min-width: 721px) and (max-width: 960px) " /><source srcset="https://imgflo.herokuapp.com/graph/vahj1ThiexotieMo/e405c32121fb0ac8102030f1c413262a/passthrough.jpg?height=476&input=https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fthe-grid-img%2Fp%2Fbd2f45c337ca52ad7bd328b01585b4d5c68353dd.jpg&width=635, https://imgflo.herokuapp.com/graph/vahj1ThiexotieMo/e405c32121fb0ac8102030f1c413262a/passthrough.jpg?height=476&input=https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fthe-grid-img%2Fp%2Fbd2f45c337ca52ad7bd328b01585b4d5c68353dd.jpg&width=635 2x" media="(min-width: 721px) and (min-width: 961px) and (max-width: 1440px)" /><source srcset="https://imgflo.herokuapp.com/graph/vahj1ThiexotieMo/e405c32121fb0ac8102030f1c413262a/passthrough.jpg?height=476&input=https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fthe-grid-img%2Fp%2Fbd2f45c337ca52ad7bd328b01585b4d5c68353dd.jpg&width=635, https://imgflo.herokuapp.com/graph/vahj1ThiexotieMo/e405c32121fb0ac8102030f1c413262a/passthrough.jpg?height=476&input=https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fthe-grid-img%2Fp%2Fbd2f45c337ca52ad7bd328b01585b4d5c68353dd.jpg&width=635 2x" media="(min-width: 1px) and (max-width: 480px) " /><source srcset="https://imgflo.herokuapp.com/graph/vahj1ThiexotieMo/e405c32121fb0ac8102030f1c413262a/passthrough.jpg?height=476&input=https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fthe-grid-img%2Fp%2Fbd2f45c337ca52ad7bd328b01585b4d5c68353dd.jpg&width=635, https://imgflo.herokuapp.com/graph/vahj1ThiexotieMo/e405c32121fb0ac8102030f1c413262a/passthrough.jpg?height=476&input=https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fthe-grid-img%2Fp%2Fbd2f45c337ca52ad7bd328b01585b4d5c68353dd.jpg&width=635 2x" media="(min-width: 1px) and (min-width: 481px) and (max-width: 720px)" /><!--[if IE 9]></video><![endif]--><img src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw=="  /></picture></a></article><article subject="stack" class="col-1 export-linebreaks not_decorated color_adjust_none color_styles_text_emphasis_no_bg color_schema_default stack_transparency_off v_emphasis_none h_emphasis_none group_overlap_none stack_v_outset_none stack_v_inset_xsmall stack_h_outset_none stack_h_inset_xsmall stack_h_align_center uninverted vertical collapsed full aspect_natural line_padding_inside text_width_wider group_h_align_none text_align_left flow_unreversed group_v_outset_none group_v_inset_small group_h_outset_none group_h_inset_small flow_vertical font_size_large stack bg_heading i first_stack last_stack heading w_cover w_media w_headline w_title w_decoration w_short_headline w_short_title media_gte_narrow media_lt_half media_lt_wide media_lt_full media_landscape crop_true stack bg_heading" itemid="e484eb04-9220-4e4f-aae3-a6d411350335" itemtype="article" diff_index="8" index="bg_heading" kind="stack" score="5.875" missed="0.125" tag="article" id="u-e484eb04-9220-4e4f-aae3-a6d411350335"><div kind="group" index="heading" class="group heading group heading" id="u-e484eb04-9220-4e4f-aae3-a6d411350335-g-heading"><h1 kind="title" index="headline" class="short short_headline short_title title headline vfld-leader vfld-trailer title headline" specificity="0.25" itemprop="title" id="u-e484eb04-9220-4e4f-aae3-a6d411350335-g-heading-t-headline"><a class="text-decoration" href="dollar700m-powerball-jackpot/" id="u-e484eb04-9220-4e4f-aae3-a6d411350335-g-heading-t-headline-a"><b data-grid-id="4a354056-a3d9-4f1a-aa28-3516b20d8cf3">$700M <wbr class="w480 w960 w961 w1799"></wbr>Powerball <wbr class="w480 w481 w960 w961 w1799 w1800"></wbr>Jackpot</b></a></h1></div><a kind="media" index="cover" itemprop="cover" class="media cover media cover" max-width="534" max-height="401" href="dollar700m-powerball-jackpot/" id="u-e484eb04-9220-4e4f-aae3-a6d411350335-m-cover"><picture id="u-e484eb04-9220-4e4f-aae3-a6d411350335-m-cover-img" class=""><!--[if IE 9]><video style="display: none;"><![endif]--><source srcset="https://imgflo.herokuapp.com/graph/vahj1ThiexotieMo/9c2fc8a41dd417cd6141160991d44df9/gradientmap.jpg?color1=%2329280A&color2=%23525014&color3=%23A4A028&color4=%23CEDE87&color5=%23EFF4D7&height=401&input=https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fthe-grid-img%2Fp%2Fbfd64abc66f65ccb56e97118344aed352a4b1012.jpg&srgb=True&stop1=0.1&stop2=0.3&stop3=0.5&stop4=0.7&stop5=0.9&width=534, https://imgflo.herokuapp.com/graph/vahj1ThiexotieMo/9c2fc8a41dd417cd6141160991d44df9/gradientmap.jpg?color1=%2329280A&color2=%23525014&color3=%23A4A028&color4=%23CEDE87&color5=%23EFF4D7&height=401&input=https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fthe-grid-img%2Fp%2Fbfd64abc66f65ccb56e97118344aed352a4b1012.jpg&srgb=True&stop1=0.1&stop2=0.3&stop3=0.5&stop4=0.7&stop5=0.9&width=534 2x" media="(min-width: 1441px) and (min-width: 1441px) and (max-width: 1799px) " /><source srcset="https://imgflo.herokuapp.com/graph/vahj1ThiexotieMo/9c2fc8a41dd417cd6141160991d44df9/gradientmap.jpg?color1=%2329280A&color2=%23525014&color3=%23A4A028&color4=%23CEDE87&color5=%23EFF4D7&height=401&input=https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fthe-grid-img%2Fp%2Fbfd64abc66f65ccb56e97118344aed352a4b1012.jpg&srgb=True&stop1=0.1&stop2=0.3&stop3=0.5&stop4=0.7&stop5=0.9&width=534, https://imgflo.herokuapp.com/graph/vahj1ThiexotieMo/9c2fc8a41dd417cd6141160991d44df9/gradientmap.jpg?color1=%2329280A&color2=%23525014&color3=%23A4A028&color4=%23CEDE87&color5=%23EFF4D7&height=401&input=https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fthe-grid-img%2Fp%2Fbfd64abc66f65ccb56e97118344aed352a4b1012.jpg&srgb=True&stop1=0.1&stop2=0.3&stop3=0.5&stop4=0.7&stop5=0.9&width=534 2x" media="(min-width: 1441px) and (min-width: 1800px) " /><source srcset="https://imgflo.herokuapp.com/graph/vahj1ThiexotieMo/9c2fc8a41dd417cd6141160991d44df9/gradientmap.jpg?color1=%2329280A&color2=%23525014&color3=%23A4A028&color4=%23CEDE87&color5=%23EFF4D7&height=401&input=https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fthe-grid-img%2Fp%2Fbfd64abc66f65ccb56e97118344aed352a4b1012.jpg&srgb=True&stop1=0.1&stop2=0.3&stop3=0.5&stop4=0.7&stop5=0.9&width=534, https://imgflo.herokuapp.com/graph/vahj1ThiexotieMo/9c2fc8a41dd417cd6141160991d44df9/gradientmap.jpg?color1=%2329280A&color2=%23525014&color3=%23A4A028&color4=%23CEDE87&color5=%23EFF4D7&height=401&input=https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fthe-grid-img%2Fp%2Fbfd64abc66f65ccb56e97118344aed352a4b1012.jpg&srgb=True&stop1=0.1&stop2=0.3&stop3=0.5&stop4=0.7&stop5=0.9&width=534 2x" media="(min-width: 721px) and (min-width: 721px) and (max-width: 960px) " /><source srcset="https://imgflo.herokuapp.com/graph/vahj1ThiexotieMo/9c2fc8a41dd417cd6141160991d44df9/gradientmap.jpg?color1=%2329280A&color2=%23525014&color3=%23A4A028&color4=%23CEDE87&color5=%23EFF4D7&height=401&input=https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fthe-grid-img%2Fp%2Fbfd64abc66f65ccb56e97118344aed352a4b1012.jpg&srgb=True&stop1=0.1&stop2=0.3&stop3=0.5&stop4=0.7&stop5=0.9&width=534, https://imgflo.herokuapp.com/graph/vahj1ThiexotieMo/9c2fc8a41dd417cd6141160991d44df9/gradientmap.jpg?color1=%2329280A&color2=%23525014&color3=%23A4A028&color4=%23CEDE87&color5=%23EFF4D7&height=401&input=https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fthe-grid-img%2Fp%2Fbfd64abc66f65ccb56e97118344aed352a4b1012.jpg&srgb=True&stop1=0.1&stop2=0.3&stop3=0.5&stop4=0.7&stop5=0.9&width=534 2x" media="(min-width: 721px) and (min-width: 961px) and (max-width: 1440px)" /><source srcset="https://imgflo.herokuapp.com/graph/vahj1ThiexotieMo/878a13f008815852eb929ae0716fa51c/gradientmap.jpg?color1=%2329280A&color2=%23525014&color3=%23A4A028&color4=%23CEDE87&color5=%23EFF4D7&height=355&input=https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fthe-grid-img%2Fp%2Fbfd64abc66f65ccb56e97118344aed352a4b1012.jpg&srgb=True&stop1=0.1&stop2=0.3&stop3=0.5&stop4=0.7&stop5=0.9&width=472, https://imgflo.herokuapp.com/graph/vahj1ThiexotieMo/9c2fc8a41dd417cd6141160991d44df9/gradientmap.jpg?color1=%2329280A&color2=%23525014&color3=%23A4A028&color4=%23CEDE87&color5=%23EFF4D7&height=401&input=https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fthe-grid-img%2Fp%2Fbfd64abc66f65ccb56e97118344aed352a4b1012.jpg&srgb=True&stop1=0.1&stop2=0.3&stop3=0.5&stop4=0.7&stop5=0.9&width=534 2x" media="(min-width: 1px) and (max-width: 480px) " /><source srcset="https://imgflo.herokuapp.com/graph/vahj1ThiexotieMo/9c2fc8a41dd417cd6141160991d44df9/gradientmap.jpg?color1=%2329280A&color2=%23525014&color3=%23A4A028&color4=%23CEDE87&color5=%23EFF4D7&height=401&input=https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fthe-grid-img%2Fp%2Fbfd64abc66f65ccb56e97118344aed352a4b1012.jpg&srgb=True&stop1=0.1&stop2=0.3&stop3=0.5&stop4=0.7&stop5=0.9&width=534, https://imgflo.herokuapp.com/graph/vahj1ThiexotieMo/9c2fc8a41dd417cd6141160991d44df9/gradientmap.jpg?color1=%2329280A&color2=%23525014&color3=%23A4A028&color4=%23CEDE87&color5=%23EFF4D7&height=401&input=https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fthe-grid-img%2Fp%2Fbfd64abc66f65ccb56e97118344aed352a4b1012.jpg&srgb=True&stop1=0.1&stop2=0.3&stop3=0.5&stop4=0.7&stop5=0.9&width=534 2x" media="(min-width: 1px) and (min-width: 481px) and (max-width: 720px)" /><!--[if IE 9]></video><![endif]--><img src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw=="  /></picture></a></article><article subject="panel" class="col-1 export-linebreaks not_decorated color_adjust_none color_styles_no_group_bg color_schema_default stack_transparency_off v_emphasis_none h_emphasis_none group_overlap_none stack_v_outset_none stack_v_inset_none stack_h_outset_none stack_h_inset_xsmall stack_h_align_center uninverted vertical collapsed full line_padding_aside_inside text_width_full group_h_align_none text_align_center flow_unreversed group_v_outset_none group_v_inset_none group_h_outset_none group_h_inset_xsmall flow_vertical font_size_small panel stack heading i first_panel last_panel w_headline w_title w_decoration w_short_headline w_short_title stack heading" itemid="u-page-alternate" itemtype="alternate" diff_index="2" index="heading" kind="stack" score="1.875" missed="0.125" tag="article" id="u-07e23e87-21c3-497a-ab00-514ed1a23279-alternate"><div kind="group" index="heading" class="group heading group heading" id="u-07e23e87-21c3-497a-ab00-514ed1a23279-alternate-g-heading"><h1 kind="title" index="headline" class="short short_headline short_title title headline vfld-leader vfld-trailer title headline" specificity="0.25" itemprop="title" id="u-07e23e87-21c3-497a-ab00-514ed1a23279-alternate-g-heading-t-headline"><a class="text-decoration" href="rss.xml" id="u-07e23e87-21c3-497a-ab00-514ed1a23279-alternate-g-heading-t-headline-a">LottoPools feed</a></h1></div></article><section kind="layout" style="position: relative" sequence="one" role="header" diff_index="0" index="one" class="layout one i first_layout w_headline w_title w_separator w_decoration w_leader w_trailer w_icon w_short_headline w_short_title layout one" id="u-07e23e87-21c3-497a-ab00-514ed1a23279-desktop-l-one"><div kind="layout" style="position: relative" sequence="one" diff_index="0" index="one" class="colors-use-local w_titles layout one i first_layout last_layout header layout one" id="u-07e23e87-21c3-497a-ab00-514ed1a23279-desktop-l-one-l-one"></div></section><section kind="layout" style="position: relative" sequence="one" role="opener" diff_index="0" index="one" class="layout one i w_paragraph w_text w_separator w_decoration w_leader w_long_paragraph w_long_text media_gte_narrow media_lt_half media_lt_wide media_lt_full media_landscape crop_true layout one" id="u-07e23e87-21c3-497a-ab00-514ed1a23279-desktop-l-one-2"><div kind="layout" style="position: relative" sequence="one" diff_index="0" index="one" class="colors-use-local w_medias w_texts layout one i first_layout last_layout opener layout one" id="u-07e23e87-21c3-497a-ab00-514ed1a23279-desktop-l-one-2-l-one"></div></section><section kind="layout" style="position: relative" sequence="one" role="feed" diff_index="0" index="one" class="layout one i w_headline w_title w_separator w_decoration w_leader w_trailer w_icon w_short_headline w_short_title media_gte_narrow media_lt_half media_lt_wide media_lt_full media_landscape crop_true layout one" id="u-07e23e87-21c3-497a-ab00-514ed1a23279-desktop-l-one-3"><div kind="layout" style="position: relative" sequence="one" diff_index="0" index="one" class="colors-use-local w_medias w_titles layout one i first_layout last_layout feed layout one" id="u-07e23e87-21c3-497a-ab00-514ed1a23279-desktop-l-one-3-l-one"></div></section><section kind="layout" style="position: relative" sequence="one" role="footer" diff_index="0" index="one" class="layout one i last_layout w_headline w_title w_separator w_decoration w_leader w_trailer w_icon w_short_headline w_short_title layout one" id="u-07e23e87-21c3-497a-ab00-514ed1a23279-desktop-l-one-4"><div kind="layout" style="position: relative" sequence="one" diff_index="0" index="one" class="colors-use-local w_titles layout one i first_layout last_layout footer layout one" id="u-07e23e87-21c3-497a-ab00-514ed1a23279-desktop-l-one-4-l-one"></div><style id="u-07e23e87-21c3-497a-ab00-514ed1a23279-color">body{background-color: rgba(220, 218, 150, 1)}</style></section><section kind="layout" style="position: relative" sequence="one" role="header" diff_index="0" index="one" class="layout one i first_layout w_headline w_title w_separator w_decoration w_leader w_trailer w_icon w_short_headline w_short_title layout one" id="u-07e23e87-21c3-497a-ab00-514ed1a23279-cinema-l-one"><div kind="layout" style="position: relative" sequence="one" diff_index="0" index="one" class="colors-use-local w_titles layout one i first_layout last_layout header layout one" id="u-07e23e87-21c3-497a-ab00-514ed1a23279-cinema-l-one-l-one"></div></section><section kind="layout" style="position: relative" sequence="one" role="opener" diff_index="0" index="one" class="layout one i w_paragraph w_text w_separator w_decoration w_leader w_long_paragraph w_long_text media_gte_narrow media_lt_half media_lt_wide media_lt_full media_landscape crop_true layout one" id="u-07e23e87-21c3-497a-ab00-514ed1a23279-cinema-l-one-2"><div kind="layout" style="position: relative" sequence="one" diff_index="0" index="one" class="colors-use-local w_medias w_texts layout one i first_layout last_layout opener layout one" id="u-07e23e87-21c3-497a-ab00-514ed1a23279-cinema-l-one-2-l-one"></div></section><section kind="layout" style="position: relative" sequence="one" role="feed" diff_index="0" index="one" class="layout one i w_headline w_title w_separator w_decoration w_leader w_trailer w_icon w_short_headline w_short_title media_gte_narrow media_lt_half media_lt_wide media_lt_full media_landscape crop_true layout one" id="u-07e23e87-21c3-497a-ab00-514ed1a23279-cinema-l-one-3"><div kind="layout" style="position: relative" sequence="one" diff_index="0" index="one" class="colors-use-local w_medias w_titles layout one i first_layout last_layout feed layout one" id="u-07e23e87-21c3-497a-ab00-514ed1a23279-cinema-l-one-3-l-one"></div></section><section kind="layout" style="position: relative" sequence="one" role="footer" diff_index="0" index="one" class="layout one i last_layout w_headline w_title w_separator w_decoration w_leader w_trailer w_icon w_short_headline w_short_title layout one" id="u-07e23e87-21c3-497a-ab00-514ed1a23279-cinema-l-one-4"><div kind="layout" style="position: relative" sequence="one" diff_index="0" index="one" class="colors-use-local w_titles layout one i first_layout last_layout footer layout one" id="u-07e23e87-21c3-497a-ab00-514ed1a23279-cinema-l-one-4-l-one"></div><style id="u-07e23e87-21c3-497a-ab00-514ed1a23279-color">body{background-color: rgba(220, 218, 150, 1)}</style></section></div><script href="./client.js">(function e(t,n,r){function s(o,u){if(!n[o]){if(!t[o]){var a=typeof require=="function"&&require;if(!u&&a)return a(o,!0);if(i)return i(o,!0);var f=new Error("Cannot find module '"+o+"'");throw f.code="MODULE_NOT_FOUND",f}var l=n[o]={exports:{}};t[o][0].call(l.exports,function(e){var n=t[o][1][e];return s(n?n:e)},l,l.exports,e,t,n,r)}return n[o].exports}var i=typeof require=="function"&&require;for(var o=0;o<r.length;o++)s(r[o]);return s})({1:[function(require,module,exports){
 /*! Hammer.JS - v1.1.3 - 2014-05-20
  * http://eightmedia.github.io/hammer.js
  *
@@ -1436,9 +1471,11 @@ global.Hamburger = require('./hamburger');
 
 global.Highlighter = require('./highlighter');
 
+global.Player = require('./player');
+
 
 }).call(this,typeof global !== "undefined" ? global : typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : {})
-},{"./animator":3,"./hamburger":4,"./highlighter":5,"./paginator":7,"hammerjs/hammer.min.js":1,"picturefill/dist/picturefill.min.js":2}],7:[function(require,module,exports){
+},{"./animator":3,"./hamburger":4,"./highlighter":5,"./paginator":7,"./player":8,"hammerjs/hammer.min.js":1,"picturefill/dist/picturefill.min.js":2}],7:[function(require,module,exports){
 var appendPage, mainpage, page, ref, ref1, urls;
 
 page = require('./reflow');
@@ -1539,7 +1576,192 @@ module.exports = function() {
 };
 
 
-},{"./reflow":8}],8:[function(require,module,exports){
+},{"./reflow":9}],8:[function(require,module,exports){
+var Player, Youtube, iframe, revealed, rgb2hex;
+
+iframe = null;
+
+Youtube = null;
+
+Player = function(id, src, width, height, color, bg) {
+  if (src.indexOf('youtube') > -1) {
+    src += '&color=white&theme=light&modestbranding=1';
+  }
+  src = src.replace('COLOR', color).replace('BG', bg);
+  if (location.protocol !== 'https:') {
+    src = src.replace('https:', 'http:');
+  }
+  iframe = document.createElement('iframe');
+  iframe.id = id;
+  iframe.setAttribute('allowfullscreen', '');
+  iframe.src = src;
+  iframe.width = width;
+  iframe.height = height;
+  iframe.style.width = '100%';
+  iframe.style.height = '100%';
+  iframe.style.left = 0;
+  iframe.style.right = 0;
+  iframe.style.position = 'absolute';
+  iframe.style.opacity = 0.2;
+  iframe.onload = function() {
+    return iframe.style.opacity = 1;
+  };
+  return iframe;
+};
+
+revealed = null;
+
+Player.reveal = function(iframe) {
+  var diff, i, left, len, parent, play, ref, ref1, sibling, target, top, translateX, translateY;
+  while (target = (target || iframe).parentNode) {
+    if ((ref = target.classList) != null ? ref.contains('media') : void 0) {
+      if (target.parentNode.classList.contains('group')) {
+        parent = target.parentNode;
+      } else {
+        parent = target;
+      }
+      revealed = iframe;
+      play = parent.getElementsByClassName('play')[0];
+      left = target.offsetWidth - play.offsetLeft - play.offsetWidth;
+      top = -play.offsetTop;
+      play.style.webkitTransformOrigin = 'top right';
+      play.style.webkitTransform = 'translateX(' + left + 'px) translateY(' + top + 'px) scale(0.5)';
+      target.classList.add('revealed');
+      ref1 = parent.parentNode.childNodes;
+      for (i = 0, len = ref1.length; i < len; i++) {
+        sibling = ref1[i];
+        if (sibling.nodeType === 1 && sibling !== parent) {
+          translateX = translateY = null;
+          if ((diff = sibling.offsetLeft + sibling.offsetWidth - parent.offsetLeft) > 2 && parent.offsetLeft >= sibling.offsetLeft) {
+            translateX = -diff;
+          }
+          if ((diff = target.offsetLeft + target.offsetWidth - sibling.offsetLeft) > 2 && parent.offsetLeft <= sibling.offsetLeft) {
+            if (!translateX || Math.abs(diff) < Math.abs(translateX)) {
+              translateX = diff;
+            }
+          }
+          if ((diff = sibling.offsetTop + sibling.offsetHeight - parent.offsetTop) > 2 && parent.offsetTop >= sibling.offsetTop) {
+            translateY = -diff;
+          }
+          if ((diff = target.offsetTop + target.offsetHeight - sibling.offsetTop) > 2 && parent.offsetTop <= sibling.offsetTop) {
+            if (!translateY || Math.abs(diff) < Math.abs(translateY)) {
+              translateY = diff;
+            }
+          }
+          if (Math.abs(translateX) > Math.abs(translateY)) {
+            sibling.style.webkitTransform = 'translateY(' + translateY + 'px)';
+          } else {
+            sibling.style.webkitTransform = 'translateX(' + translateX + 'px)';
+          }
+          console.log(translateX, translateY, sibling);
+        }
+      }
+    }
+  }
+};
+
+Player.hide = function(iframe) {
+  var i, len, parent, play, ref, ref1, sibling;
+  while (parent = (parent || iframe).parentNode) {
+    if ((ref = parent.classList) != null ? ref.contains('revealed') : void 0) {
+      parent.classList.remove('revealed');
+      if (parent.parentNode.classList.contains('group')) {
+        parent = parent.parentNode;
+      }
+      play = parent.getElementsByClassName('play')[0];
+      play.style.webkitTransform = '';
+      ref1 = parent.parentNode.childNodes;
+      for (i = 0, len = ref1.length; i < len; i++) {
+        sibling = ref1[i];
+        sibling.style.webkitTransform = '';
+      }
+    }
+  }
+  return revealed = null;
+};
+
+window.addEventListener('resize', function() {
+  return setTimeout(function() {
+    return requestAnimationFrame(function() {
+      if (revealed) {
+        if (revealed.offsetWidth) {
+          return Player.reveal(revealed);
+        } else {
+          return Player.stop(revealed);
+        }
+      }
+    });
+  }, 10);
+});
+
+Player.stop = function(iframe) {
+  var old;
+  old = iframe;
+  iframe.style.opacity = 0;
+  setTimeout(function() {
+    var ref;
+    return (ref = old.parentNode) != null ? ref.removeChild(old) : void 0;
+  }, 300);
+  Player.hide(iframe);
+  return iframe = null;
+};
+
+document.addEventListener('click', function(e) {
+  var bg, color, header, parent, play, ref, ref1, results, styles, target;
+  target = e.target;
+  results = [];
+  while (target) {
+    if ((ref = target.classList) != null ? ref.contains('media') : void 0) {
+      if (play = target.getElementsByClassName('play')[0]) {
+        if ((iframe != null ? iframe.parentNode : void 0) === target) {
+          Player.stop(iframe);
+        } else {
+          if (iframe) {
+            Player.stop(iframe);
+          }
+          color = bg = null;
+          header = (ref1 = target.parentNode.parentNode.getElementsByClassName('title')[0]) != null ? ref1.firstChild : void 0;
+          parent = header || play;
+          while (parent) {
+            if (parent.nodeType === 1) {
+              styles = window.getComputedStyle(parent);
+              if (styles.color.indexOf('rgba') === -1 || !styles.color.match(/,\s*0\)/)) {
+                if (color == null) {
+                  color = styles.color;
+                }
+              }
+              if (styles['background-color'].indexOf('rgba') === -1 || !styles['background-color'].match(/,\s*0\)/)) {
+                if (bg == null) {
+                  bg = styles['background-color'];
+                }
+              }
+            }
+            parent = parent.parentNode;
+          }
+          iframe = Player(play.id + '-player', play.getAttribute('data-src'), play.getAttribute('data-width'), play.getAttribute('data-height'), rgb2hex(color), rgb2hex(bg));
+          target.appendChild(iframe);
+          Player.reveal(iframe);
+        }
+        e.preventDefault();
+        break;
+      }
+    }
+    results.push(target = target.parentNode);
+  }
+  return results;
+});
+
+rgb2hex = function(rgb) {
+  rgb = rgb.match(/^rgba?[\s+]?\([\s+]?(\d+)[\s+]?,[\s+]?(\d+)[\s+]?,[\s+]?(\d+)[\s+]?/i);
+  if (rgb && rgb.length === 4) {
+    return ("0" + parseInt(rgb[1], 10).toString(16)).slice(-2) + ("0" + parseInt(rgb[2], 10).toString(16)).slice(-2) + ("0" + parseInt(rgb[3], 10).toString(16)).slice(-2);
+  }
+};
+
+window.exports = window.Player = Player;
+
+
+},{}],9:[function(require,module,exports){
 module.exports = {
   reflow: function(container) {
     var counter, heights, hidden, hole, holed, holes, i, id, ids, index, j, k, l, last, layout, layouts, len, len1, len2, len3, m, mutations, name, node, ref, ref1, ref2, stack, stacks;
@@ -1804,7 +2026,7 @@ module.exports = function(callback) {
   } else {
     protocol = '';
   }
-  url = protocol + "//cdn.thegrid.io/gss/gss-document/1.2.4/gss.document.parser.js";
+  url = protocol + "//cdn.thegrid.io/gss/gss-document/1.2.8/gss.document.parser.js";
   if (location.toString().indexOf('//localhost:8080') > -1) {
     return module.exports.load(protocol + "//localhost:8080/node_modules/gss-document/dist/gss.document.parser.js", callback, function() {
       return module.exports.load(url, callback);
