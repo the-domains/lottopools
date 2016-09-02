@@ -1,19 +1,4 @@
-name: LottoPools
-favicon: null
-layout_spectrum: 0.8726090341806412
 typography_spectrum: 0.2840524099301547
-cta:
-  domain: null
-  bucket: null
-  version: null
-analytics:
-  google: null
-  facebook: null
-  twitter: null
-opengraph:
-  image: null
-  type: null
-  appId: null
 color:
   brandColors:
     - '#B8B42D'
@@ -25,4 +10,23 @@ color:
   lightness: 0.7378948759287596
   saturation: 0.5170252569951117
   rhythmicContrast: 0.5943385045975447
+opengraph:
+  image: null
+  type: null
+  appId: null
+layout_spectrum: 0.8726090341806412
+analytics:
+  google: null
+  facebook: null
+  twitter: null
+name: LottoPools
+cta:
+  domain: null
+  bucket: null
+  version: null
+navigation:
+  - name: Buy a Ticket
+    url: 'http://www.lottopools.com'
+    type: external
+favicon: null
 purpose: []
